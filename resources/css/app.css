@@ -1,0 +1,30 @@
+
+@tailwind base; 
+@tailwind components;
+@tailwind utilities;
+
+.custom-height {
+    margin-top: 110px;
+    height: 300px;
+}
+
+/*inputs del dashboard*/
+.actualizar {
+    border-radius: 8px;
+}
+
+.eliminar {
+    margin-top: 10PX;
+    border-radius: 8PX;
+}
+
+.inicio{
+    border-radius: 8px;
+
+}
+
+.cuenta{
+    border-radius: 8px;
+}
+
+
