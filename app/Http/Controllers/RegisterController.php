@@ -21,6 +21,7 @@ class RegisterController extends Controller
     public function store(Request $request){
         //dd($request -> get(key: 'name'));
         $this ->validate($request,[
+
             'name'=>'required | min:3 |max:30' ,
         
             'username'=>'required |unique:users|min:3|max:30',
@@ -36,20 +37,21 @@ class RegisterController extends Controller
 
          
         ]);
-
+        
+        
         
         User::create([
+
             'name' => $request->name, 
             'username' => str::lower ($request->username), 
             'email' => $request->email, 
             'password' =>  $request->password
         ]);
        
-
-        return redirect()->route('post.index');
-
+        return redirect() -> route('login');
+        
         //autenticar
-    
+     
         auth() -> attempt([
             'email' => $request -> email,
             'password' => $request -> password
@@ -57,7 +59,6 @@ class RegisterController extends Controller
 
         //Redireccionar
 
-        return redirect() -> route(route:'post.index');
 
 
         //otra forma de autenticar

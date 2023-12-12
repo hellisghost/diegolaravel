@@ -21,6 +21,6 @@ class LoginController extends Controller
             return back() -> with ('mensaje','Usuario o contraseña incorrectos');
         }
 
-        return redirect()->route('post.index');
+        return redirect()->route('dashboard.index');
     }
 }
